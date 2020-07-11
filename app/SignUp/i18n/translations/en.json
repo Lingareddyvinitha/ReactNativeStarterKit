@@ -1,0 +1,22 @@
+{
+  "signUp": "Sign Up",
+  "pleaseFillThisFormToCreateAnAccount": "Please fill this form to create an account",
+  "selectYourGender": "Select your gender",
+  "male": "Male",
+  "female": "Female",
+  "other": "Other",
+  "selectYourBranch": "Select your branch",
+  "dob": "DOB",
+  "enterYourAddress": "Enter your address",
+  "setYourTypingSpeed": "Set your typing speed",
+  "iAcceptTheTermsOfUse&PrivacyPolicy": "I accept the Terms of Use & Privacy Policy",
+  "alreadyHaveAnAccount": "Already have an account",
+  "loginHere": "Login here",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "mobileNumber": "Mobile Number",
+  "email": "Email",
+  "password": "Password",
+  "confirmPassword": "Confirm Password",
+  "typeYourAddress": "Type your address here!..."
+}

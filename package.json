@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.6.0",
+    "@react-native-community/slider": "^3.0.0",
     "@types/i18n-js": "^3.0.1",
     "@types/micromatch": "^3.1.0",
     "@types/styled-components": "^4.1.19",
@@ -25,9 +26,12 @@
     "react-native-config": "github:luggit/react-native-config#1eb6ac0",
     "react-native-gesture-handler": "1.4.1",
     "react-native-router-flux": "4.0.6",
+    "react-native-simple-radio-button": "^2.7.4",
+    "react-native-ui-xg": "0.0.6",
     "react-navigation": "4.0.5",
     "react-navigation-stack": "2.8.2",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "tailwind-rn": "^1.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
