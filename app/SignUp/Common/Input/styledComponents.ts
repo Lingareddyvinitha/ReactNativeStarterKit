@@ -4,7 +4,7 @@ import Colors from '../../themes/Colors';
 export const InputWrapper = styled.View``;
 
 export const InputField = styled.TextInput`
-  ${tailwind(` m-2`)}
+  ${tailwind(' m-2')}
   background-color: ${Colors.whiteSmoke};
   width:100%
 `;

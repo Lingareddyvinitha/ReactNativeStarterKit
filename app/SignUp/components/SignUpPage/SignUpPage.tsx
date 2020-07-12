@@ -21,6 +21,8 @@ import {
   ConditionsWrapper,
   ConditionDescription,
   ButtonWrapper,
+  SignUpPageWrapper,
+  ColorPickerWrapper,
 } from './styledComponents';
 import Input from '../../Common/Input';
 import {observable} from 'mobx';
@@ -31,6 +33,7 @@ import {PickerComponent} from '../../Common/PickerComponent';
 import {DatePicker} from '../../Common/DatePicker';
 import Slider from '../../Common/Slider';
 import {Button} from '../../Common/Button';
+import {ColorPicker} from '../../Common/ColorPicker';
 
 @observer
 class SignUpPage extends Component {
@@ -69,97 +72,103 @@ class SignUpPage extends Component {
   };
   render() {
     return (
-      <SignUpWrapper>
-        <Heading>{I18n.signUp}</Heading>
-        <SignUpMessage>
-          {I18n.pleaseFillThisFormToCreateAnAccount}
-        </SignUpMessage>
-        <NameField>
+      <SignUpPageWrapper>
+        <ColorPickerWrapper>
+          <ColorPicker />
+        </ColorPickerWrapper>
+
+        {/* <SignUpWrapper>
+          <Heading>{I18n.signUp}</Heading>
+          <SignUpMessage>
+            {I18n.pleaseFillThisFormToCreateAnAccount}
+          </SignUpMessage>
+          <NameField>
+            <Input
+              onChangeText={this.onChangeFirstName}
+              value={this.firstName}
+              placeHolder={I18n.firstName}
+              style={signUpPage.firstName}
+            />
+            <Input
+              onChangeText={this.onChangeLastName}
+              value={this.lastName}
+              placeHolder={I18n.lastName}
+              style={signUpPage.lastName}
+            />
+          </NameField>
           <Input
-            onChangeText={this.onChangeFirstName}
-            value={this.firstName}
-            placeHolder={I18n.firstName}
-            style={signUpPage.firstName}
+            onChangeText={this.onChangeMobileNumber}
+            value={this.mobileNumber}
+            placeHolder={I18n.mobileNumber}
+            style={signUpPage.mobileNumber}
+            keyboardType="numeric"
           />
           <Input
-            onChangeText={this.onChangeLastName}
-            value={this.lastName}
-            placeHolder={I18n.lastName}
-            style={signUpPage.lastName}
+            onChangeText={this.onChangeMobileNumber}
+            value={this.email}
+            placeHolder={I18n.email}
+            style={signUpPage.email}
           />
-        </NameField>
-        <Input
-          onChangeText={this.onChangeMobileNumber}
-          value={this.mobileNumber}
-          placeHolder={I18n.mobileNumber}
-          style={signUpPage.mobileNumber}
-          keyboardType="numeric"
-        />
-        <Input
-          onChangeText={this.onChangeMobileNumber}
-          value={this.email}
-          placeHolder={I18n.email}
-          style={signUpPage.email}
-        />
-        <Input
-          onChangeText={this.onChangePassword}
-          value={this.password}
-          placeHolder={I18n.password}
-          style={signUpPage.password}
-          secureTextEntry={true}
-        />
-        <Input
-          onChangeText={this.onChangeConfirmPassword}
-          value={this.confirmPassword}
-          placeHolder={I18n.confirmPassword}
-          style={signUpPage.confirmPassword}
-          secureTextEntry={true}
-        />
-        <GenderWrapper>
-          <SelectYourGender>{I18n.selectYourGender}</SelectYourGender>
-          <RadioButton
-            radioProps={[
-              {label: I18n.male, value: 0},
-              {label: I18n.female, value: 1},
-              {label: I18n.other, value: 2},
-            ]}
+          <Input
+            onChangeText={this.onChangePassword}
+            value={this.password}
+            placeHolder={I18n.password}
+            style={signUpPage.password}
+            secureTextEntry={true}
           />
-        </GenderWrapper>
-        <BranchAndDateWrapper>
-          <BranchWrapper>
-            <SelectYourBranch>{I18n.selectYourBranch}</SelectYourBranch>
-            <PickerComponent />
-          </BranchWrapper>
-          <DateWrapper>
-            <DateLable>{I18n.dob}</DateLable>
-            <DatePicker />
-          </DateWrapper>
-        </BranchAndDateWrapper>
-        <AddressWrapper>
-          <AddressLable>{I18n.enterYourAddress}</AddressLable>
-          <Address
-            placeholder={I18n.typeYourAddress}
-            value={this.address}
-            onChangeText={this.onChangeAddress}
+          <Input
+            onChangeText={this.onChangeConfirmPassword}
+            value={this.confirmPassword}
+            placeHolder={I18n.confirmPassword}
+            style={signUpPage.confirmPassword}
+            secureTextEntry={true}
           />
-        </AddressWrapper>
-        <TypeSpeedWrapper>
-          <TypeSpeedLable>{I18n.setYourTypingSpeed}</TypeSpeedLable>
-          <Slider />
-        </TypeSpeedWrapper>
-        <ConditionsWrapper>
-          <CheckBox
-            value={this.isSelected}
-            onValueChange={this.onChangeIsSelected}
-          />
-          <ConditionDescription>
-            {I18n['iAcceptTheTermsOfUse&PrivacyPolicy']}
-          </ConditionDescription>
-        </ConditionsWrapper>
-        <ButtonWrapper>
-          <Button />
-        </ButtonWrapper>
-      </SignUpWrapper>
+          <GenderWrapper>
+            <SelectYourGender>{I18n.selectYourGender}</SelectYourGender>
+            <RadioButton
+              radioProps={[
+                {label: I18n.male, value: 0},
+                {label: I18n.female, value: 1},
+                {label: I18n.other, value: 2},
+              ]}
+            />
+          </GenderWrapper>
+          <BranchAndDateWrapper>
+            <BranchWrapper>
+              <SelectYourBranch>{I18n.selectYourBranch}</SelectYourBranch>
+              <PickerComponent />
+            </BranchWrapper>
+            <DateWrapper>
+              <DateLable>{I18n.dob}</DateLable>
+              <DatePicker />
+            </DateWrapper>
+          </BranchAndDateWrapper>
+          <AddressWrapper>
+            <AddressLable>{I18n.enterYourAddress}</AddressLable>
+            <Address
+              placeholder={I18n.typeYourAddress}
+              value={this.address}
+              onChangeText={this.onChangeAddress}
+            />
+          </AddressWrapper>
+          <TypeSpeedWrapper>
+            <TypeSpeedLable>{I18n.setYourTypingSpeed}</TypeSpeedLable>
+            <Slider />
+          </TypeSpeedWrapper>
+          <ConditionsWrapper>
+            <CheckBox
+              value={this.isSelected}
+              onValueChange={this.onChangeIsSelected}
+            />
+            <ConditionDescription>
+              {I18n['iAcceptTheTermsOfUse&PrivacyPolicy']}
+            </ConditionDescription>
+          </ConditionsWrapper>
+          <ButtonWrapper>
+            <Button />
+          </ButtonWrapper>
+        </SignUpWrapper> */}
+      </SignUpPageWrapper>
     );
   }
 }
